@@ -1,4 +1,57 @@
 @import "tailwindcss";
+/* styles/globals.css */
+/* @tailwind base;
+@tailwind components; */
+@tailwind utilities;
+/* globals.css */
+body {
+  font-family: "Arial", sans-serif;
+}
+
+.dark {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+/* Page Loader */
+.loader {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader.active {
+  display: flex;
+}
+
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #0f0c29;
+}
+
+/* body {
+  font-family: "Inter", sans-serif;
+  color: white;
+} */
+
+.glass-card {
+  @apply bg-white/5 backdrop-blur-lg border border-white/20 rounded-2xl shadow-lg p-6;
+}
 
 :root {
   --background: #ffffff;
