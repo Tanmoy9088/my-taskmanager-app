@@ -13,7 +13,7 @@ export default function Register() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/register",
+        "https://my-taskmanager-app.onrender.com/api/auth/register",
         { username, email, password, role },
         { withCredentials: true }
       );

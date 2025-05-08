@@ -15,7 +15,7 @@ export default function Navbar() {
   const handleLogout = async () => {
     try {
       await axios.post(
-        "http://localhost:5000/api/auth/logout",
+        "/api/auth/logout",
         {},
         { withCredentials: true }
       );
@@ -42,7 +42,7 @@ export default function Navbar() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/auth/me", {
+      .get("https://my-taskmanager-app.onrender.com/api/auth/me", {
         withCredentials: true,
       })
       .then((res) => setUser(res.data))

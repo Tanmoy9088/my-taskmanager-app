@@ -19,7 +19,7 @@ export default function TaskEditor({ task, onClose, onSaved }) {
   const handleUpdate = async () => {
     try {
       await axios.put(
-        `http://localhost:5000/api/tasks/${task._id}`,
+        `https://my-taskmanager-app.onrender.com/api/tasks/${task._id}`,
         formData,
         { withCredentials: true }
       );

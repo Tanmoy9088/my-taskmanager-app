@@ -17,7 +17,7 @@ export default function Login() {
     try {
       // Add withCredentials in the axios config, not inside the body
       const response = await axios.post(
-        "http://localhost:5000/api/auth/login", 
+        "https://my-taskmanager-app.onrender.com/api/auth/login", 
         { email, password },
         { withCredentials: true } // Add this in the config
       );
@@ -43,7 +43,7 @@ export default function Login() {
     try {
       // Send the Google token to your backend for verification and user creation
       const res = await axios.post(
-        "http://localhost:5000/api/auth/google-login",
+        "https://my-taskmanager-app.onrender.com/api/auth/google-login",
         { token}
       );
 

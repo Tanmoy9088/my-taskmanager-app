@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/auth/me", {
+        const res = await axios.get("https://my-taskmanager-app.onrender.com/api/auth/me", {
           withCredentials: true,
         });
         setUser(res.data);

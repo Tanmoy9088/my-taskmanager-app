@@ -9,7 +9,7 @@ export default function TeamPage() {
   useEffect(() => {
     async function getUsers() {
       try {
-        const res = await axios.get("http://localhost:5000/api/auth/users", {
+        const res = await axios.get("https://my-taskmanager-app.onrender.com/api/auth/users", {
           withCredentials: true,
         });
         setUsers(res.data); // Axios response is already parsed

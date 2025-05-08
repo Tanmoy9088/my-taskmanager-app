@@ -37,7 +37,7 @@ export default function AssignTask() {
         createdBy: user.username, // Or user.id depending on backend
       };
 
-      const res = await axios.post("http://localhost:5000/api/tasks", payload, {
+      const res = await axios.post("https://my-taskmanager-app.onrender.com/api/tasks", payload, {
         withCredentials: true,
       });
 

@@ -14,7 +14,7 @@ app.use(cookieParser()); // Middleware to parse cookies
 
 app.use(
   cors({
-    origin: "http://localhost:3000", // your frontend origin
+    origin: ['https://my-taskmanager-app.vercel.app',"http://localhost:3000"], // your frontend origin
     credentials: true, // allow cookies to be sent
   })
 );

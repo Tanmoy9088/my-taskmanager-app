@@ -16,7 +16,7 @@ const TaskItem = ({ task, onStatusChange, onDelete, onEdit }) => {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/tasks/${task._id}`,
+        `https://my-taskmanager-app.onrender.com/api/tasks/${task._id}`,
         { status: nextStatus },
         { withCredentials: true }
       );
@@ -31,7 +31,7 @@ const TaskItem = ({ task, onStatusChange, onDelete, onEdit }) => {
   const handleDelete = async () => {
     if (window.confirm("Are you sure you want to delete this task?")) {
       try {
-        await axios.delete(`http://localhost:5000/api/tasks/${task._id}`, {
+        await axios.delete(`https://my-taskmanager-app.onrender.com/api/tasks/${task._id}`, {
           withCredentials: true,
         });
         toast.success("Task deleted successfully");
