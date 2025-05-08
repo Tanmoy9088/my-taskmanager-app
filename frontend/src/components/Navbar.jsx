@@ -15,7 +15,7 @@ export default function Navbar() {
   const handleLogout = async () => {
     try {
       await axios.post(
-        "/api/auth/logout",
+        "https://my-taskmanager-app.onrender.com/api/auth/logout",
         {},
         { withCredentials: true }
       );
