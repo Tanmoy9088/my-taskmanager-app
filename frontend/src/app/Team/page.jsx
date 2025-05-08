@@ -1,15 +1,31 @@
 "use client";
-const axios = require("axios");
-async function getUsers() {
-  const res = await axios.get("http://localhost:5000/api/auth/users", {
-    withCredentials: true,
-  });
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-  return res.json();
-}
+export default function TeamPage() {
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-export default async function TeamPage() {
-  const users = await getUsers();
+  useEffect(() => {
+    async function getUsers() {
+      try {
+        const res = await axios.get("http://localhost:5000/api/auth/users", {
+          withCredentials: true,
+        });
+        setUsers(res.data); // Axios response is already parsed
+      } catch (err) {
+        console.error("Failed to fetch users:", err);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    getUsers();
+  }, []);
+
+  if (loading) {
+    return <p className="text-center py-10">Loading users...</p>;
+  }
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-10">
@@ -21,7 +37,7 @@ export default async function TeamPage() {
             className="bg-white shadow-md p-4 rounded text-center"
           >
             <img
-              src={`https://i.pravatar.cc/150?u=${user.id}`}
+              src={`${user.id}`}
               alt={user.name}
               className="rounded-full w-24 h-24 mx-auto"
             />

@@ -11,7 +11,7 @@ export default function Sidebar() {
   const links = [
     { label: "Dashboard", path: "/dashboard", icon: <FaTachometerAlt /> },
     { label: "Create Task", path: "/assignTask", icon: <FaPlusCircle /> },
-    { label: "Team", path: "/team", icon: <FaUsers /> },
+    { label: "Team", path: "/Team", icon: <FaUsers /> },
   ];
 
 // Safe on client only
