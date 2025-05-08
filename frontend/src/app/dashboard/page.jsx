@@ -78,9 +78,9 @@ const Dashboard = () => {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <motion.div className="p-6">
+    <motion.div className="p-6 overflow-auto bg-gray-900 text-white rounded-lg shadow-lg">
       <h1 className="text-4xl font-semibold mb-8">Tasks Dashboard</h1>
-
+<div className="grid gap-6 overflow-auto text-center">
       <TaskList
         title="📝 Tasks You Created"
         tasks={createdTasks}
@@ -102,6 +102,7 @@ const Dashboard = () => {
         onDelete={handleDelete}
         onEdit={handleEdit}
       />
+      </div>
     </motion.div>
   );
 };

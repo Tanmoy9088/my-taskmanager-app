@@ -10,7 +10,7 @@ const TaskList = ({ title, tasks }) => {
       {!tasks.length ? (
         <p className="text-gray-400">No tasks available</p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left overflow-auto max-h-[40vh]">
           {tasks.map((task) => (
             <TaskItem key={task._id} task={task} />
           ))}

@@ -10,7 +10,7 @@ export default function ClientLayout({ children }) {
   const shouldHideLayout = hideLayoutRoutes.includes(pathname);
 
   return (
-    <div className="min-h-screen flex bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white">
+    <div className="min-h-screen flex bg-gradient-to-br bg-[#0f0c29] text-white">
       {!shouldHideLayout && <Sidebar />}
       <main className={`flex-1 w-screen h-screen ${!shouldHideLayout ? 'sm:ml-60 p-16' : ''}`}>
         {children}
