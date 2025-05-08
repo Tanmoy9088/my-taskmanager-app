@@ -1,7 +1,9 @@
+// app/layout.js or layout.tsx
 import "./globals.css";
 import { AuthProvider } from "../context/AuthContext";
 import ClientLayout from "../components/ClientLayout";
 import { Toaster } from "react-hot-toast";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "Task Manager",
@@ -13,7 +15,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <AuthProvider>
-          <ClientLayout>{children}</ClientLayout>
+          <Suspense fallback={null}>
+            <ClientLayout>{children}</ClientLayout>
+          </Suspense>
           <Toaster position="top-right" />
         </AuthProvider>
       </body>

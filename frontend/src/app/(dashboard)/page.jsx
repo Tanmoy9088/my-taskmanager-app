@@ -35,12 +35,9 @@ export default function Layout({ children }) {
           </nav>
         </div>
 
-        <footer className="text-sm text-white/40">
-          © 2025 TaskBoard Inc.
-        </footer>
       </aside>
 
-      <main className="flex-1 p-10 overflow-y-auto">{children}</main>
+      <main className="flex-1 overflow-y-auto">{children}</main>
     </div>
   );
 }
